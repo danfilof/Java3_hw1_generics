@@ -13,8 +13,26 @@ public class App {
         int[] firstTask = task_one_SWAP(array);
 
         // Второе задание
-        List <Integer> arrList = new ArrayList<>();
-        List <Integer> taskTwo = task_two(array, arrList);
+        ArrayList <Integer> arrList = new ArrayList<>();
+        ArrayList <Integer> taskTwo = task_two(array, arrList);
+
+        // Третье задание
+        Apple a1 = new Apple();
+        Apple a2 = new Apple();
+        Apple a3 = new Apple();
+
+        Orange o1 = new Orange();
+        Orange o2 = new Orange();
+        Orange o3 = new Orange();
+        Orange o4 = new Orange();
+        Orange o5 = new Orange();
+
+
+        final Box<Orange> boxOfOranges= new Box<Orange>(o1, o2, o3);
+        final Box<Orange> boxOfOranges1= new Box<Orange>(o4, o5);
+        final Box<Apple> boxOfApples = new Box<Apple>(a1, a2, a3);
+
+        boxOfOranges1.compare(boxOfApples);
     }
 
  // 1. Написать метод, который меняет два элемента массива местами (массив может быть любого ссылочного типа);
