@@ -27,12 +27,13 @@ public class App {
         Orange o4 = new Orange();
         Orange o5 = new Orange();
 
-
         final Box<Orange> boxOfOranges= new Box<Orange>(o1, o2, o3);
         final Box<Orange> boxOfOranges1= new Box<Orange>(o4, o5);
         final Box<Apple> boxOfApples = new Box<Apple>(a1, a2, a3);
+        final Box<Orange> boxOfOranges2 = new Box<Orange>();
 
         boxOfOranges1.compare(boxOfApples);
+        boxOfOranges1.moveTo(boxOfOranges2);
     }
 
  // 1. Написать метод, который меняет два элемента массива местами (массив может быть любого ссылочного типа);
