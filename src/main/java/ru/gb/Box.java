@@ -6,13 +6,12 @@ import java.util.List;
 
 public class Box<T extends Fruit> {
       ArrayList<T> fruits;
-
       public Box(T... fruits) {
         this.fruits = new ArrayList<T>(Arrays.asList(fruits));
     }
     // Добавление фруктов в ящик
      public void add(T... fruits){
-        System.out.printf("Fruit %s has been added to %s. \n", fruits, this);
+        System.out.printf("Fruit has been added to %s. \n", this);
        this.fruits.addAll(List.of(fruits));
     }
 
