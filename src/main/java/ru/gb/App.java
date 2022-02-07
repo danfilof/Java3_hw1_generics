@@ -2,7 +2,6 @@ package ru.gb;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class App {
@@ -55,7 +54,8 @@ public class App {
         boxOfOranges.moveTo(boxOfOranges1);
     }
 
-    public static int[] task_one_SWAP(int[] x) {
+    // Метод для первого задания
+    public int[] task_one_SWAP(int[] x) {
         System.out.println("T1. Initial array: " + Arrays.toString(x));
         int zeroValue = x[0];
         int firstValue = x[1];
@@ -65,13 +65,13 @@ public class App {
         return x;
     }
 
-
-    public static ArrayList<Integer> task_two(int[] firstTask, List<Integer> arrList) {
-        System.out.println("T2. Initial arrayList: " + arrList);
-        for (int i : firstTask) {
-            arrList.add(i);
+    // Метод для второго задания
+    public ArrayList<Integer> task_two(int[] y, List<Integer> ARRList) {
+        System.out.println("T2. Initial arrayList: " + ARRList);
+        for (int i : y) {
+            ARRList.add(i);
         }
-        System.out.println("T2. Final arrayList: " + arrList);
-        return (ArrayList<Integer>) arrList;
+        System.out.println("T2. Final arrayList: " + ARRList);
+        return (ArrayList<Integer>) ARRList;
     }
 }

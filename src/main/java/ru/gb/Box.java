@@ -3,8 +3,10 @@ package ru.gb;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
 public class Box<T> {
     private ArrayList<T> fruits;
+
 
     public Box(T... fruits) {
       this.fruits = new ArrayList<T>(Arrays.asList(fruits));
@@ -20,7 +22,8 @@ public class Box<T> {
     public float getBoxWeight() {
         if (fruits.size() == 0) return 0;
             float boxWeight = 0;
-        boxWeight = fruits.size() * Fruit.getWeight();
+            float fruitWeight = Fruit.getWeight();
+        boxWeight = fruits.size() * fruitWeight;
         System.out.println("Weight of the box " + this + ": " + boxWeight);
         return boxWeight;
     }

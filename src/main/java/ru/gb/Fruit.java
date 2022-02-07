@@ -1,14 +1,13 @@
 package ru.gb;
 
 public abstract class Fruit {
-    private static float weight;
+    private float weight;
 
     public Fruit(float weight) {
         this.weight = weight;
     }
 
-    public static float getWeight() {
+    public float getWeight() {
         return weight;
     }
-
 }
