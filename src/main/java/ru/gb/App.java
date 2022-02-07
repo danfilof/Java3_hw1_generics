@@ -16,8 +16,8 @@ public class App {
         // Второе задание
 
         // 2. Написать метод, который преобразует массив в ArrayList;
-        ArrayList <Integer> arrList = new ArrayList<>();
-        ArrayList <Integer> taskTwo = task_two(array, arrList);
+        ArrayList<Integer> arrList = new ArrayList<>();
+        ArrayList<Integer> taskTwo = task_two(array, arrList);
 
         // Третье задание
 
@@ -39,9 +39,10 @@ public class App {
         Orange o3 = new Orange();
         Orange o4 = new Orange();
         Orange o5 = new Orange();
+        Orange o6 = new Orange();
 
-        final Box<Orange> boxOfOranges= new Box<Orange>(o1, o2, o3);
-        final Box<Orange> boxOfOranges1= new Box<Orange>(o4, o5);
+        final Box<Orange> boxOfOranges = new Box<Orange>(o1, o2, o3);
+        final Box<Orange> boxOfOranges1 = new Box<Orange>(o4, o5);
         final Box<Apple> boxOfApples = new Box<Apple>(a1, a2, a3);
         final Box<Fruit> boxOfFruits = new Box<Fruit>();
 
@@ -52,10 +53,12 @@ public class App {
 
         // Но в ящик с Orange могут попасть исключительно Orange
         boxOfOranges.moveTo(boxOfOranges1);
+        // Можно добавить фрукт в соответствующую корзину
+        boxOfOranges.add(o6);
     }
 
     // Метод для первого задания
-    public int[] task_one_SWAP(int[] x) {
+    public static int[] task_one_SWAP(int[] x) {
         System.out.println("T1. Initial array: " + Arrays.toString(x));
         int zeroValue = x[0];
         int firstValue = x[1];
@@ -66,7 +69,7 @@ public class App {
     }
 
     // Метод для второго задания
-    public ArrayList<Integer> task_two(int[] y, List<Integer> ARRList) {
+    public static ArrayList<Integer> task_two(int[] y, List<Integer> ARRList) {
         System.out.println("T2. Initial arrayList: " + ARRList);
         for (int i : y) {
             ARRList.add(i);

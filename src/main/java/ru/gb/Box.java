@@ -2,28 +2,27 @@ package ru.gb;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
+public class Box<T extends Fruit> {
+      ArrayList<T> fruits;
 
-public class Box<T> {
-    private ArrayList<T> fruits;
-
-
-    public Box(T... fruits) {
-      this.fruits = new ArrayList<T>(Arrays.asList(fruits));
+      public Box(T... fruits) {
+        this.fruits = new ArrayList<T>(Arrays.asList(fruits));
     }
-
     // Добавление фруктов в ящик
-    public boolean add(T... fruit){
-        System.out.printf("Fruit %s has been added. \n", fruit);
-        return fruits.add((T) fruit);
+     public void add(T... fruits){
+        System.out.printf("Fruit %s has been added to %s. \n", fruits, this);
+       this.fruits.addAll(List.of(fruits));
     }
 
     // Получение веса ящика. В задании сказано назвать метод getWeight(), но во избежании какой-либо путаницы с геттером float weight из Fruit назвал его иначе
-    public float getBoxWeight() {
-        if (fruits.size() == 0) return 0;
-            float boxWeight = 0;
-            float fruitWeight = Fruit.getWeight();
-        boxWeight = fruits.size() * fruitWeight;
+     public float getBoxWeight() {
+         if (fruits.size() == 0) return 0;
+            float boxWeight = 0.0f;
+         for (T fruit : fruits) {
+             boxWeight += fruit.getWeight();
+         }
         System.out.println("Weight of the box " + this + ": " + boxWeight);
         return boxWeight;
     }
@@ -43,7 +42,7 @@ public class Box<T> {
     }
 
     // Метод пересыпки из одной коробки в другую. Использую <? super T>, так как неизвестно, какой тип объектов будет использован. После пересыпки очищаем лист
-    public void moveTo(Box <? super T> toBox) {
+     public void moveTo(Box <? super T> toBox) {
         System.out.printf("Fruits are moved from %s to %s. \n", this, toBox);
         toBox.fruits.addAll(this.fruits);
             fruits.clear();
