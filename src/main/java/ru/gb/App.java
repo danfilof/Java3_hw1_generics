@@ -69,12 +69,12 @@ public class App {
     }
 
     // Метод для второго задания
-    public static ArrayList<Integer> task_two(int[] y, List<Integer> list_arr) {
-        System.out.println("T2. Initial arrayList: " + list_arr);
+    public static ArrayList<Integer> task_two(int[] y, List<Integer> arr_list) {
+        System.out.println("T2. Initial arrayList: " + arr_list);
         for (int i : y) {
-            list_arr.add(i);
+            arr_list.add(i);
         }
-        System.out.println("T2. Final arrayList: " + list_arr);
-        return (ArrayList<Integer>) list_arr;
+        System.out.println("T2. Final arrayList: " + arr_list);
+        return (ArrayList<Integer>) arr_list;
     }
 }
