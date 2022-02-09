@@ -3,6 +3,7 @@ package ru.gb;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class Box<T extends Fruit> {
       ArrayList<T> fruits;
@@ -31,7 +32,7 @@ public class Box<T extends Fruit> {
         double b1Weight = this.getBoxWeight();
         double b2Weight = b2.getBoxWeight();
 
-        if (b1Weight == b2Weight) {
+        if (Double.compare(b1Weight, b2Weight) == 0) {
             System.out.printf("Weights of boxes %s and %s are equal. \n", this, b2);
             return true;
         } else {
