@@ -10,14 +10,16 @@ public class App {
         // Первое задание
 
         // 1. Написать метод, который меняет два элемента массива местами (массив может быть любого ссылочного типа);
-        final int[] array = {1, 5, 6, 7};
-        int[] firstTask = task_one_SWAP(array);
+        final Integer[] array = {1, 5, 6, 7};
+        final String[] arrayStr = {"hohoho", "hahaha", "hehehe", "hihihi"};
+        task_one_SWAP(array,2,3);
+        task_one_SWAP(arrayStr, 0,1);
 
         // Второе задание
 
         // 2. Написать метод, который преобразует массив в ArrayList;
         ArrayList<Integer> arrList = new ArrayList<>();
-        ArrayList<Integer> taskTwo = task_two(array, arrList);
+     //  ArrayList<Integer> taskTwo = task_two(array, arrList);
 
         // Третье задание
 
@@ -58,14 +60,14 @@ public class App {
     }
 
     // Метод для первого задания
-    public static int[] task_one_SWAP(int[] x) {
-        System.out.println("T1. Initial array: " + Arrays.toString(x));
-        int zeroValue = x[0];
-        int firstValue = x[1];
-        x[0] = firstValue;
-        x[1] = zeroValue;
-        System.out.println("T1. Final array: " + Arrays.toString(x));
-        return x;
+    public static <T> T[] task_one_SWAP(T[] array, int arrIndex1, int arrIndex2) {
+        System.out.println("T1. Initial array: " + Arrays.toString(array));
+        T firstValue = array[arrIndex1];
+        T secondValue = array[arrIndex2];
+        array[arrIndex2] = firstValue;
+        array[arrIndex1] = secondValue;
+        System.out.println("T1. Final array: " + Arrays.toString(array));
+        return array;
     }
 
     // Метод для второго задания
