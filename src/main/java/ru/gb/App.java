@@ -19,7 +19,10 @@ public class App {
 
         // 2. Написать метод, который преобразует массив в ArrayList;
         ArrayList<Integer> arrList = new ArrayList<>();
-     //  ArrayList<Integer> taskTwo = task_two(array, arrList);
+        ArrayList<String> arrListSrt = new ArrayList<>();
+        task_two(array, arrList);
+        task_two(arrayStr, arrListSrt);
+
 
         // Третье задание
 
@@ -71,12 +74,12 @@ public class App {
     }
 
     // Метод для второго задания
-    public static ArrayList<Integer> task_two(int[] y, List<Integer> arr_list) {
-        System.out.println("T2. Initial arrayList: " + arr_list);
-        for (int i : y) {
-            arr_list.add(i);
+    public static <H> List<H> task_two(H[] y, List<H> arr) {
+        System.out.println("T2. Initial arrayList: " + arr);
+        for (H i : y) {
+            arr.add(i);
         }
-        System.out.println("T2. Final arrayList: " + arr_list);
-        return (ArrayList<Integer>) arr_list;
+        System.out.println("T2. Final arrayList: " + arr);
+        return (ArrayList<H>) arr;
     }
 }
